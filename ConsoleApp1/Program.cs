@@ -14,21 +14,24 @@ namespace ConsoleApp1
             int employeeWageRate = 20;
             int empHrs = 0;
 
-            if (status == 0)
+            switch(status)
             {
-                Console.WriteLine("Employee is Absent");
+                case 0:
+                    Console.WriteLine("Employee is Absent");
+                    break;
+                case 1:
+                    Console.WriteLine("Employee is Present and is Full-Time");
+                    empHrs = 8;
+                    break;
+                case 2:
+                    Console.WriteLine("Employee is Present and is Part-Time");
+                    empHrs = 4;
+                    break;
+                default:
+                    Console.WriteLine("Invalid input");
+                    break;
             }
-            else if (status == 1)
-            {
-                Console.WriteLine("Employee is Present and is Full-Time");
-                empHrs = 8;
-            }
-            else
-            {
-                Console.WriteLine("Employee is Present and is Part-Time");
-                empHrs = 4;
-            }
-
+            
             int totalDailyWage = employeeWageRate * empHrs;
             Console.WriteLine("Total Daily Wage: " + totalDailyWage);
         }
