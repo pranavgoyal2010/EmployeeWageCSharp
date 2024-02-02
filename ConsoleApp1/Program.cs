@@ -8,7 +8,18 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Welcome to Employee Wage Computation Problem");
+            Random rnd = new Random();
+            int status = rnd.Next(0, 2);
+            //Console.WriteLine("Welcome to Employee Wage Computation Problem");
+
+            if(status == 0)
+            {
+                Console.WriteLine("Employee is Absent");
+            }
+            else
+            {
+                Console.WriteLine("Employee is Present");
+            }
         }
     }
 }
