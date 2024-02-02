@@ -10,7 +10,9 @@ namespace ConsoleApp1
         {
             Random rnd = new Random();
             int status = rnd.Next(0, 2);
-            //Console.WriteLine("Welcome to Employee Wage Computation Problem");
+
+            int employeeWageRate = 20;
+            int empHrs = 0;
 
             if(status == 0)
             {
@@ -19,7 +21,11 @@ namespace ConsoleApp1
             else
             {
                 Console.WriteLine("Employee is Present");
+                empHrs = 8;
             }
+
+            int totalDailyWage = employeeWageRate * empHrs;
+            Console.WriteLine("Total Daily Wage: " + totalDailyWage);
         }
     }
 }
