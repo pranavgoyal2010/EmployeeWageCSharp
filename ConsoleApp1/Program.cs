@@ -13,10 +13,13 @@ namespace ConsoleApp1
 
             int employeeWageRate = 20;
             int empHrs = 0;
-            int numOfDays = 20;
+            int totalDays = 20;
+            int totalHours = 100;
             int totalMonthlyWage = 0;
-
-            for(int day = 1; day<=numOfDays; day++)
+            int currDay = 1;
+            int currHours = 0;
+            
+            while(currDay<=totalDays && currHours<=totalHours)
             {
                 int status = rnd.Next(0, 3);
                 switch (status)
@@ -38,13 +41,17 @@ namespace ConsoleApp1
                         break;
 
                 }
-                Console.WriteLine("Day "+ day + " Wage : " + (employeeWageRate * empHrs));
+                Console.WriteLine("Day " + currDay + " Wage : " + (employeeWageRate * empHrs));
+                currDay++;
+                currHours += empHrs;
                 totalMonthlyWage += (employeeWageRate * empHrs);
             }
             
             
             
-            Console.WriteLine("Total Monthly Wage: " + totalMonthlyWage);
+            Console.WriteLine("Total Monthly Wage: " + totalMonthlyWage); 
+            Console.WriteLine("Total Days worked: " + ((currDay>totalDays)?20:currDay));
+            Console.WriteLine("Total Number of Hours: " + ((currHours>totalHours)?100:currHours));
         }
     }
 }
