@@ -7,11 +7,12 @@ namespace ConsoleApp1
     class EmployeeWageComputation
     {
         
-        public void ComputeWage()
+        public void ComputeWage(string companyName, int employeeWageRate, int maxDays, int maxHours)
         {
-            const int EMPLOYEE_WAGE_RATE = 20;
-            const int MAX_DAYS = 20;
-            const int MAX_HOURS = 100;
+
+            int EMPLOYEE_WAGE_RATE = employeeWageRate;
+            int MAX_DAYS = maxDays;
+            int MAX_HOURS = maxHours;
             
             int empHrs = 0;       
             int totalMonthlyWage = 0;
@@ -50,11 +51,11 @@ namespace ConsoleApp1
                 //totalMonthlyWage += (EMPLOYEE_WAGE_RATE * empHrs);
             }
 
-
-            totalMonthlyWage = EMPLOYEE_WAGE_RATE * ((currHours > MAX_HOURS) ? 100 : currHours);
+            Console.WriteLine("Company's name : " + companyName);
+            totalMonthlyWage = EMPLOYEE_WAGE_RATE * ((currHours > MAX_HOURS) ? MAX_HOURS : currHours);           
             Console.WriteLine("Total Monthly Wage: " + totalMonthlyWage); 
-            Console.WriteLine("Total Days worked: " + ((currDay>MAX_DAYS)?20:currDay-1));
-            Console.WriteLine("Total Number of Hours: " + ((currHours>MAX_HOURS)?100:currHours));
+            Console.WriteLine("Total Days worked: " + ((currDay>MAX_DAYS)?MAX_DAYS:currDay-1));
+            Console.WriteLine("Total Number of Hours: " + ((currHours>MAX_HOURS)?MAX_HOURS:currHours));
         }
     }
 
@@ -63,7 +64,11 @@ namespace ConsoleApp1
         static void Main(string[] args)
         {
             EmployeeWageComputation emp = new EmployeeWageComputation();
-            emp.ComputeWage();
+            emp.ComputeWage("Reliance", 30, 15, 50);
+            Console.WriteLine("============================================");
+            emp.ComputeWage("Airtel", 20, 30, 40);
+            Console.WriteLine("============================================");
+            emp.ComputeWage("Videocon", 25, 25, 100);
         }
         
     }
