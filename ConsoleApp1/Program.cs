@@ -63,12 +63,14 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            EmployeeWageComputation emp = new EmployeeWageComputation();
-            emp.ComputeWage("Reliance", 30, 15, 50);
+            EmployeeWageComputation reliance = new EmployeeWageComputation();
+            reliance.ComputeWage("Reliance", 30, 15, 50);
             Console.WriteLine("============================================");
-            emp.ComputeWage("Airtel", 20, 30, 40);
+            EmployeeWageComputation airtel = new EmployeeWageComputation();
+            airtel.ComputeWage("Airtel", 20, 30, 40);
             Console.WriteLine("============================================");
-            emp.ComputeWage("Videocon", 25, 25, 100);
+            EmployeeWageComputation videocon = new EmployeeWageComputation();
+            videocon.ComputeWage("Videocon", 25, 25, 100);
         }
         
     }
