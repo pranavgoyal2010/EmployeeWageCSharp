@@ -5,14 +5,14 @@ using System;
 namespace ConsoleApp1
 {
    
-    class Runner
+    class Program
     {
         static void Main(string[] args)
         {
-            EmpWageBuilderArray empWageBuilder = new EmpWageBuilderArray();
-            empWageBuilder.AddCompanyEmpWage("Dhart", 20, 2, 10);
+            EmpWageBuilder empWageBuilder = new EmpWageBuilder(5);
+            empWageBuilder.AddCompanyEmpWage("DMart", 20, 2, 10);
             empWageBuilder.AddCompanyEmpWage("Reliance", 10, 4, 20);
-            empWageBuilder.ComputeEmpWage();
+            empWageBuilder.ComputeEmpWage();            
         }
 
     }

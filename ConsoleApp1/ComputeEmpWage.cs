@@ -20,9 +20,10 @@ namespace ConsoleApp1
             this.empRatePerHour = empRatePerHour;
             this.numOfWorkingDays = numOfWorkingDays;
             this.maxHoursPerMonth = maxHoursPerMonth;
+            this.totalEmpWage = 0;
         }
 
-        public void setTotalEmpWage(int totalEmpWage)
+        public void SetTotalEmpWage(int totalEmpWage)
         {
             this.totalEmpWage = totalEmpWage;
         }
